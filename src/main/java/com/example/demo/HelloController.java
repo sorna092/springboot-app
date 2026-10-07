@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Value("${APP_VERSION:dev}")
-    private String version;
+    private final String version;
+
+    public HelloController(@Value("${APP_VERSION:dev}") String version) {
+        this.version = version;
+    }
 
     @GetMapping("/")
     public Map<String, String> hello() {
