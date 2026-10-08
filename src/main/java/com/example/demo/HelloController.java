@@ -20,7 +20,7 @@ public class HelloController {
     @GetMapping("/")
     public Map<String, String> hello() {
         return Map.of(
-                "message", "Hello from HA Kubernetes!",
+                "message", "Hello from HA Kubernetes! Deployed by GitOps v2",
                 "version", version,
                 "pod", podName());
     }

@@ -13,7 +13,7 @@ class HelloControllerTest {
     void rootReturnsGreeting() {
         Map<String, String> body = new HelloController("test").hello();
 
-        assertEquals("Hello from HA Kubernetes!", body.get("message"));
+        assertEquals("Hello from HA Kubernetes! Deployed by GitOps v2", body.get("message"));
         assertEquals("test", body.get("version"));
         assertNotNull(body.get("pod"));
     }
